@@ -3,13 +3,13 @@ sz = bim.Size;
 
 % 1. Define your "Resolution"
 % Every 200x200 pixel block will become 1 single pixel in Z_small
-blockSize = [200, 200]; 
+blockSize = [100, 100]; 
 
 % 2. Run the apply function
 % This creates a new, much smaller blockedImage on your disk/memory
 newBim = apply(bim, @(b) mean(b.Data, 'all', 'omitnan'), ...
                'BlockSize', blockSize, ...
-               'UseParallel', true,'OutputLocation','test10');
+               'UseParallel', true,'OutputLocation','lidarBlocked');
 
 Z_small = gather(newBim);
 
