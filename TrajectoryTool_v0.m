@@ -14,7 +14,7 @@ z_des_m = -4000; % Vertical distance from initial point in meters
 
 % Enter Hopper Properties
 m0_kg = 900; % Total mass of hopper in kg
-Isp_s = 220; % Isp of propellant system
+Isp_s = 60; % Isp of propellant system
 
 % System Bounds
 % It may be desireable to set limits on the maximum thrust or vehicle pitch
@@ -77,7 +77,7 @@ else
     param.theta_max = pi/2;
     param.theta_min = pi/2;
 end
-param.isp = 220;
+param.isp = Isp_s;
 param.ground = ground_on_b;
 param.show_solver = show_solver_b;
 
