@@ -9,12 +9,12 @@ clc;
 % trajectory that would clip walls or rim. So use with that knowledge
 
 % Enter Desired Distances of Trajectory
-x_des_m = 10000; % Horizontal distance from initial point in meters
+x_des_m = 8000; % Horizontal distance from initial point in meters
 z_des_m = -4000; % Vertical distance from initial point in meters
 
 % Enter Hopper Properties
-m0_kg = 900; % Total mass of hopper in kg
-Isp_s = 60; % Isp of propellant system
+m0_kg = 1187 ; % Total mass of hopper in kg
+Isp_s = 343; % Isp of propellant system
 
 % System Bounds
 % It may be desireable to set limits on the maximum thrust or vehicle pitch
@@ -31,7 +31,7 @@ thrust_min_N = 0; % Minimum thrust in Newtons
 % I've read 9 degrees is a reasonable assumption for vertical takeoff
 % vertical lander hopper
 theta_bound_b = true;
-theta_max_deg = 9;  % Maximum pitch in degrees
+theta_max_deg = 70;  % Maximum pitch in degrees
 
 % Chose to represent ground or not in trajectory generation
 % Right now ground is represented by sinusoidal wave that tries to mimick 
@@ -42,23 +42,25 @@ ground_on_b = false;
 
 % Display Option
 % Gives you option to see solver iteration if you so desire
-show_solver_b = false;
+show_solver_b = true;
 
 %=========================== DO NOT EDIT ================================%
 % Splice count
-N = 40;
+N = 70;
 
 % Pack initial conditions
 BC.x0 = 0;
 BC.xdot0 = 0;
 BC.z0 = 0;
 BC.zdot0 = 0;
+BC.theta0 = 0;
 
 % Pack final conditions
 BC.xf = x_des_m;
 BC.xdotf = 0;
 BC.zf = z_des_m;
 BC.zdotf = 0;
+BC.thetaf = 0;
 
 % Pack Parameters
 param.m = m0_kg;

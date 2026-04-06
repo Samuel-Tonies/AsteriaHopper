@@ -43,6 +43,8 @@ xf       = BC.xf;
 xdotf    = BC.xdotf;
 zf       = BC.zf;
 zdotf    = BC.zdotf;
+theta0 = BC.theta0;
+thetaf = BC.thetaf;
 
 % BC Equalities
 ceq_bc = [ x(1)-x0;
@@ -53,7 +55,9 @@ ceq_bc = [ x(1)-x0;
            x_dot(end)-xdotf;
            z(end)-zf;
            z_dot(end)-zdotf
-           m(1) - m0];
+           m(1) - m0;
+           theta(1)-theta0;
+           theta(end)-thetaf];
 
 % --- Collect all equality constraints ---
 ceq = [ ceq_x(:); ceq_xdot(:); ceq_z(:); ceq_zdot(:); ceq_m(:); ceq_bc(:) ];
