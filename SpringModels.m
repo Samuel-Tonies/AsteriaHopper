@@ -5,8 +5,8 @@ k_s = 500;
 c_s = 2;
 
 % Floor parameters
-k_T = 50000;
-c_T = 230000;
+k_T = 9999999999;
+c_T = 1500000;
 mu_floor = .2;
 % Define floor vector
 floor_angle = 6; %deg
@@ -31,7 +31,7 @@ p_l2 = [1; 0; -.5];
 p_l3 = [0; -1; -.5];
 p_l4 = [0; 1; -.5]; %UPDATE ALL
 
-k_l = 1;
-c_l = 1;
+k_l = 10000000000;
+c_l = 2*sqrt(k_l*m_leg);
 m_leg = 10;
 leg_length = 1;
