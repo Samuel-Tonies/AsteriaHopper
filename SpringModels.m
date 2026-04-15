@@ -5,17 +5,16 @@ k_s = 500;
 c_s = 2;
 
 % Floor parameters
-k_T = 9999999999;
-c_T = 1500000;
+k_T = 9999999;
+c_T = 90000;
 mu_floor = .2;
 % Define floor vector
 floor_angle = 6; %deg
 % n_floor = [cosd(90+floor_angle), 0, sind(90+floor_angle)];
-n_floor = [0 0 1];
+% n_floor = [0 0 1];
 % Leg Model
 angle_legs = 54; %degrees
 body_length = 1.61544;
-leg_length = 1.87198;
 
 r_l1 = [cosd(angle_legs); 0; sind(angle_legs)];
 r_l1 = r_l1/norm(r_l1);
@@ -31,7 +30,7 @@ p_l2 = [1; 0; -.5];
 p_l3 = [0; -1; -.5];
 p_l4 = [0; 1; -.5]; %UPDATE ALL
 
-k_l = 10000000000;
+k_l = 100000000000;
 c_l = 2*sqrt(k_l*m_leg);
 m_leg = 10;
 leg_length = 1;
